@@ -1,0 +1,12 @@
+# secrets
+.freepik-key
+.env
+.env.*
+# deps / build
+node_modules/
+.vercel/
+.DS_Store
+Thumbs.db
+
+# heavy raw video originals (web versions are committed)
+assets/_raw_video/
