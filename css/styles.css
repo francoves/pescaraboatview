@@ -203,8 +203,8 @@ section{position:relative}
 /* ---------- map ---------- */
 .map-wrap{position:relative;border-radius:32px;overflow:hidden;height:clamp(380px,56vh,560px);box-shadow:var(--shadow);border:1px solid var(--sky-line);max-width:var(--maxw);margin:0 auto;background:var(--sky-1)}
 #map{width:100%;height:100%}
-.map-mk{display:flex;align-items:center;gap:6px;white-space:nowrap;pointer-events:none}
-.map-mk.side-l{flex-direction:row-reverse}
+.map-mk{display:flex;flex-direction:column;align-items:center;gap:4px;white-space:nowrap;pointer-events:none}
+.map-mk.side-bottom{flex-direction:column-reverse}
 .map-dot{width:12px;height:12px;border-radius:50%;background:var(--teal);border:2.5px solid #fff;box-shadow:0 1px 5px rgba(6,37,54,.5);flex:0 0 auto}
 .map-mk-port .map-dot{background:var(--coral)}
 .map-mk-major .map-dot{width:16px;height:16px;border-width:3px}
@@ -218,6 +218,7 @@ section{position:relative}
 .intromap-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.92) 30%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 70%)}
 .intromap-content{position:relative;z-index:2;max-width:600px;padding:clamp(2.5rem,6vw,4rem) clamp(1.3rem,5vw,3rem)}
 .intromap-content h2{margin:.4rem 0 1rem}
+.claim-blue{color:var(--navy);font-weight:700}
 .intromap-content p{color:var(--ink-soft);font-size:1.04rem;margin-top:.9rem;max-width:44ch}
 .intromap-cap{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.6rem;font-weight:700;font-size:.78rem;color:var(--teal-d);text-transform:uppercase;letter-spacing:.1em}
 .intromap-dot{width:9px;height:9px;border-radius:50%;background:var(--coral);flex:0 0 auto;box-shadow:0 0 0 4px rgba(255,122,89,.2)}

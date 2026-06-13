@@ -9,14 +9,14 @@
 
   // Markers: ports (coral) + beaches/coves (teal). side = which side the label sits.
   const POIS = [
-    { n: "Pescara",            c: [14.2156, 42.4664], type: "port",  major: true, side: "r" },
-    { n: "Francavilla al Mare", c: [14.2903, 42.4184], type: "port",  side: "r" },
-    { n: "Ortona",             c: [14.4046, 42.3553], type: "port",  side: "r" },
-    { n: "Ripari di Giobbe",   c: [14.4200, 42.3360], type: "beach", side: "r" },
-    { n: "Cala Turchino",      c: [14.4600, 42.2890], type: "beach", side: "r" },
-    { n: "Punta Cavalluccio",  c: [14.4830, 42.2620], type: "beach", side: "r" },
-    { n: "Punta Aderci",       c: [14.7030, 42.1550], type: "beach", side: "l" },
-    { n: "Vasto",              c: [14.6680, 42.1190], type: "port",  major: true, side: "l" },
+    { n: "Pescara",            c: [14.2156, 42.4664], type: "port",  major: true, side: "top" },
+    { n: "Francavilla al Mare", c: [14.2903, 42.4184], type: "port",  side: "bottom" },
+    { n: "Ortona",             c: [14.4046, 42.3553], type: "port",  side: "top" },
+    { n: "Ripari di Giobbe",   c: [14.4200, 42.3360], type: "beach", side: "bottom" },
+    { n: "Cala Turchino",      c: [14.4600, 42.2890], type: "beach", side: "top" },
+    { n: "Punta Cavalluccio",  c: [14.4830, 42.2620], type: "beach", side: "bottom" },
+    { n: "Punta Aderci",       c: [14.7030, 42.1550], type: "beach", side: "top" },
+    { n: "Vasto",              c: [14.6680, 42.1190], type: "port",  major: true, side: "bottom" },
   ];
 
   // Route well offshore (east) so it clearly reads as a sea route
@@ -25,6 +25,15 @@
     [14.490, 42.340], [14.535, 42.295], [14.575, 42.250],
     [14.660, 42.195], [14.730, 42.150],
   ];
+
+  // rotate the map so the Pescara->Vasto coast sits horizontally (everything reads cleanly)
+  function bearingBetween(a, b) {
+    const toR = d => d * Math.PI / 180, toD = r => r * 180 / Math.PI;
+    const y = Math.sin(toR(b[0] - a[0])) * Math.cos(toR(b[1]));
+    const x = Math.cos(toR(a[1])) * Math.sin(toR(b[1])) - Math.sin(toR(a[1])) * Math.cos(toR(b[1])) * Math.cos(toR(b[0] - a[0]));
+    return (toD(Math.atan2(y, x)) + 360) % 360;
+  }
+  const BEARING = bearingBetween([14.2156, 42.4664], [14.6680, 42.1190]) - 90;
 
   let started = false;
   function init() {
@@ -35,15 +44,16 @@
     const pad = () => {
       const w = el.clientWidth || 900;
       return w > 760
-        ? { top: 40, bottom: 40, left: Math.min(Math.round(w * 0.42), 470), right: 40 }
-        : { top: 8, bottom: 300, left: 22, right: 22 };
+        ? { top: 36, bottom: 36, left: Math.min(Math.round(w * 0.40), 460), right: 30 }
+        : { top: 30, bottom: 175, left: 22, right: 22 };
     };
 
     const map = new maplibregl.Map({
       container: "map",
       style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
       bounds: BOUNDS,
-      fitBoundsOptions: { padding: pad() },
+      bearing: BEARING,
+      fitBoundsOptions: { padding: pad(), bearing: BEARING },
       interactive: false,            // fully fixed view
       attributionControl: { compact: true },
     });
@@ -51,7 +61,7 @@
     let rt;
     window.addEventListener("resize", () => {
       clearTimeout(rt);
-      rt = setTimeout(() => map.fitBounds(BOUNDS, { padding: pad(), duration: 0 }), 150);
+      rt = setTimeout(() => map.fitBounds(BOUNDS, { padding: pad(), bearing: BEARING, duration: 0 }), 150);
     });
 
     map.on("load", () => {
@@ -82,8 +92,8 @@
       POIS.forEach(p => {
         const mk = document.createElement("div");
         mk.className = "map-mk map-mk-" + p.type + (p.major ? " map-mk-major" : "") + " side-" + p.side;
-        mk.innerHTML = '<span class="map-dot"></span><span class="map-lbl">' + p.n + "</span>";
-        new maplibregl.Marker({ element: mk, anchor: p.side === "l" ? "right" : "left" })
+        mk.innerHTML = '<span class="map-lbl">' + p.n + '</span><span class="map-dot"></span>';
+        new maplibregl.Marker({ element: mk, anchor: p.side === "bottom" ? "top" : "bottom" })
           .setLngLat(p.c)
           .addTo(map);
       });
