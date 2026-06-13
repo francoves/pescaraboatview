@@ -200,6 +200,15 @@ section{position:relative}
 .cap-chips{list-style:none;display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
 .cap-chips li{background:var(--sky-2);color:var(--navy);font-weight:600;font-size:.86rem;padding:.5rem .95rem;border-radius:100px;border:1px solid var(--sky-line)}
 
+/* ---------- map ---------- */
+.map-wrap{position:relative;border-radius:32px;overflow:hidden;height:clamp(380px,56vh,560px);box-shadow:var(--shadow);border:1px solid var(--sky-line);max-width:var(--maxw);margin:0 auto;background:var(--sky-1)}
+#map{width:100%;height:100%}
+.map-pin{width:14px;height:14px;border-radius:50%;background:var(--teal);border:3px solid #fff;box-shadow:0 2px 8px rgba(6,37,54,.45);cursor:pointer;transition:transform .2s}
+.map-pin:hover{transform:scale(1.3)}
+.map-pin-major{width:20px;height:20px;background:var(--coral);border-width:4px}
+.maplibregl-popup-content{font-family:"Manrope",sans-serif;font-weight:700;font-size:.85rem;color:var(--navy);border-radius:10px;padding:.4rem .7rem;box-shadow:var(--shadow-soft)}
+.maplibregl-ctrl-group{border-radius:10px!important;overflow:hidden}
+
 /* ---------- depart ---------- */
 .depart{background:var(--sky-1);border-radius:40px}
 .dep-main{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.4rem,4vw,2.8rem);align-items:center;
