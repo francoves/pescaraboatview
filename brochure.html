@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pescara Boat View — Brochure</title>
+<link rel="icon" type="image/png" href="assets/img/favicon.png" />
+<link rel="stylesheet" href="css/fonts.css" />
+<style>
+:root{
+  --navy:#0a3550; --navy-d:#062536; --teal:#15a3a3; --teal-d:#0f7d80;
+  --coral:#ff7a59; --sky-1:#f2f9fd; --sky-2:#e7f3fb; --sky-3:#d4eaf6; --sky-line:#cfe6f2;
+  --ink:#0d1b24; --ink-soft:#41525c; --cream:#f6efe6;
+  --disp:"Bricolage Grotesque","Manrope",serif;
+  --sans:"Manrope",system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html,body{background:#9fb0bb;font-family:var(--sans);color:var(--ink);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+.disp{font-family:var(--disp);font-weight:500;letter-spacing:-.02em;line-height:1.02}
+
+/* ---- page frame ---- */
+.page{position:relative;width:210mm;height:297mm;background:#fff;overflow:hidden;margin:0 auto}
+@media screen{ body{padding:24px 0} .page{margin:0 auto 26px;box-shadow:0 24px 70px -24px rgba(6,37,54,.5);border-radius:4px} }
+@page{ size:A4 portrait; margin:0 }
+@media print{ .page{margin:0;box-shadow:none;border-radius:0;page-break-after:always} .page:last-child{page-break-after:auto} }
+
+.pad{position:absolute;inset:0;padding:15mm}
+.kick{font-size:10pt;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--teal-d)}
+.kick.coral{color:var(--coral)}
+.kick.light{color:#9fdada}
+.rule{height:1px;background:var(--sky-line);border:0}
+
+/* page chrome */
+.pfoot{position:absolute;left:15mm;right:15mm;bottom:9mm;display:flex;justify-content:space-between;align-items:center;font-size:8pt;letter-spacing:.06em;color:#9aa7b0;text-transform:uppercase;font-weight:700}
+.pfoot .n{color:var(--teal-d)}
+.page:not(.cover)::before{content:"";position:absolute;left:-21mm;bottom:-19mm;width:46mm;height:46mm;background:url('assets/img/emblem.png') center/contain no-repeat;opacity:.96;z-index:5;pointer-events:none}
+.brandmark{display:inline-flex;align-items:center;gap:6px;font-family:var(--disp);font-weight:600;font-size:11pt;color:var(--navy)}
+
+/* =================== COVER =================== */
+.cover .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,37,54,.45) 0%,rgba(6,37,54,.15) 32%,rgba(6,37,54,.55) 70%,rgba(4,32,46,.92) 100%)}
+.cover .pad{display:flex;flex-direction:column;color:#fff}
+.cover .logo{width:62mm;background:#fff;border-radius:10px;padding:8px 14px;box-shadow:0 12px 30px -12px rgba(0,0,0,.4)}
+.cover .ctitle{font-size:40pt;margin-top:auto;max-width:165mm;text-shadow:0 6px 30px rgba(0,0,0,.35)}
+.cover .ctitle b{font-weight:600}
+.cover .csub{margin-top:8mm;font-size:13pt;line-height:1.5;color:rgba(255,255,255,.92);max-width:140mm}
+.cover .cmeta{margin-top:9mm;display:flex;gap:7mm;flex-wrap:wrap;align-items:center}
+.cover .pill{display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(255,255,255,.5);border-radius:100px;padding:7px 16px;font-weight:700;font-size:10.5pt;backdrop-filter:blur(4px)}
+.cover .dot{width:9px;height:9px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(255,122,89,.3)}
+.cover .cplaces{margin-top:6mm;font-family:var(--disp);font-weight:500;font-size:13.5pt;letter-spacing:.005em;color:#fff;display:flex;align-items:center;gap:11px}
+.cover .cplaces i{color:var(--coral);font-style:normal;font-weight:600;margin:0 2px}
+.cover .cbar{display:inline-block;width:26px;height:2px;background:var(--coral);flex:0 0 auto}
+
+/* =================== HEADERS =================== */
+.head{display:flex;flex-direction:column;gap:5mm}
+.h-row{display:flex;align-items:baseline;justify-content:space-between;gap:8mm}
+.h-title{font-size:30pt;color:var(--navy)}
+.h-lead{font-size:11.5pt;color:var(--ink-soft);max-width:150mm;line-height:1.5}
+
+/* =================== EXPERIENCES =================== */
+.exp-grid{position:absolute;left:15mm;right:15mm;top:62mm;bottom:20mm;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.25fr 1fr 1fr;gap:6mm}
+.xcard{position:relative;border-radius:14px;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 14px 30px -18px rgba(6,37,54,.6)}
+.xcard.big{grid-column:1 / span 2}
+.xcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.xcard .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,37,54,0) 35%,rgba(6,37,54,.55) 66%,rgba(6,37,54,.92) 100%)}
+.xcard .tx{position:relative;padding:8mm 7mm 6mm}
+.xcard .tag{display:inline-block;font-size:7.5pt;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);padding:3px 9px;border-radius:100px;margin-bottom:5px}
+.xcard h3{font-family:var(--disp);font-weight:600;font-size:16pt;margin-bottom:3px;letter-spacing:-.01em}
+.xcard.big h3{font-size:21pt}
+.xcard p{font-size:9pt;line-height:1.4;color:rgba(255,255,255,.9);max-width:135mm}
+
+/* =================== ROUTE MAP =================== */
+.mapwrap{position:absolute;left:15mm;right:15mm;top:64mm;height:120mm;border-radius:16px;overflow:hidden;border:1px solid var(--sky-line);box-shadow:0 16px 36px -22px rgba(6,37,54,.5)}
+.routeimg{width:100%;height:100%;object-fit:cover;display:block}
+.routeboat{position:absolute;left:45%;top:39%;width:42px;height:42px;transform:translate(-50%,-50%);filter:drop-shadow(0 3px 6px rgba(6,37,54,.35))}
+.routeboat svg{width:100%;height:100%;display:block}
+.legend{position:absolute;left:15mm;right:15mm;top:192mm;display:flex;gap:10mm;align-items:center;flex-wrap:wrap}
+.lg{display:inline-flex;align-items:center;gap:8px;font-size:10pt;font-weight:700;color:var(--navy)}
+.lg .d{width:13px;height:13px;border-radius:50%;border:2.5px solid #fff;box-shadow:0 1px 4px rgba(6,37,54,.4)}
+.lg .d.port{background:var(--coral)} .lg .d.beach{background:var(--teal)}
+.lg .d.route{width:22px;height:0;border:0;border-top:3px dashed var(--teal-d);border-radius:0;box-shadow:none}
+.mapcap{position:absolute;left:15mm;right:15mm;top:206mm;font-family:var(--disp);font-size:15pt;color:var(--navy);font-weight:500}
+
+/* =================== SPLIT (captain / boat) =================== */
+.split{position:absolute;left:15mm;right:15mm;top:56mm;bottom:18mm;display:flex;flex-direction:column;gap:8mm}
+.block{display:grid;grid-template-columns:1fr 1fr;gap:7mm;align-items:stretch}
+.block .ph{border-radius:14px;overflow:hidden;box-shadow:0 14px 30px -20px rgba(6,37,54,.55);min-height:62mm}
+.block .ph img{width:100%;height:100%;object-fit:cover}
+.block.rev .ph{order:2}
+.block .bd{display:flex;flex-direction:column;justify-content:center}
+.block h3{font-family:var(--disp);font-weight:600;font-size:21pt;color:var(--navy);margin:6px 0 8px;letter-spacing:-.01em}
+.block p{font-size:10.5pt;line-height:1.5;color:var(--ink-soft)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.chips span{background:var(--sky-2);border:1px solid var(--sky-line);color:var(--navy);font-weight:700;font-size:8.5pt;padding:5px 10px;border-radius:100px}
+.who3{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:1mm}
+.who3 .w{position:relative;border-radius:12px;overflow:hidden;height:40mm;color:#fff;display:flex;align-items:flex-end;box-shadow:0 12px 26px -18px rgba(6,37,54,.6)}
+.who3 .w img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.who3 .w .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,37,54,0) 40%,rgba(6,37,54,.85))}
+.who3 .w span{position:relative;padding:6mm 5mm;font-family:var(--disp);font-weight:600;font-size:13pt}
+
+/* =================== HOW / CONTACT =================== */
+.how{position:absolute;left:15mm;right:15mm;top:58mm;display:grid;grid-template-columns:repeat(3,1fr);gap:7mm}
+.step{background:var(--sky-1);border:1px solid var(--sky-line);border-radius:14px;padding:8mm 6mm}
+.step .num{width:14mm;height:14mm;border-radius:50%;background:linear-gradient(150deg,var(--teal),var(--navy));color:#fff;font-family:var(--disp);font-weight:600;font-size:18pt;display:flex;align-items:center;justify-content:center;margin-bottom:6mm}
+.step h4{font-family:var(--disp);font-weight:600;font-size:14pt;color:var(--navy);margin-bottom:4px}
+.step p{font-size:9.5pt;line-height:1.45;color:var(--ink-soft)}
+.p5-pad{position:absolute;inset:0;padding:15mm;display:flex;flex-direction:column;gap:8mm}
+.how-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:7mm}
+.cl-rule{width:34px;height:2px;background:var(--coral);flex:0 0 auto}
+.cta{position:relative;margin-top:auto;display:block;text-decoration:none;background:linear-gradient(150deg,var(--navy),var(--navy-d) 70%,#04202f);border-radius:18px;padding:12mm 12mm;color:#fff;overflow:hidden}
+.cta .bg{position:absolute;inset:0;opacity:.16;object-fit:cover;width:100%;height:100%;mix-blend-mode:luminosity}
+.cta .in{position:relative}
+.cta h3{font-family:var(--disp);font-weight:500;font-size:24pt;letter-spacing:-.01em;max-width:130mm}
+.cta .wa{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#04321a;font-weight:800;font-size:13pt;padding:11px 22px;border-radius:100px;margin-top:8mm}
+.cta .wa svg{width:20px;height:20px}
+.cta .small{margin-top:6mm;font-size:9.5pt;color:rgba(255,255,255,.8);letter-spacing:.04em}
+.cta .langs{margin-top:3mm;font-size:9pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.closing{display:flex;align-items:center;gap:14px;font-family:var(--disp);font-weight:500;font-size:15.5pt;line-height:1.2;color:var(--navy)}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER ============ -->
+<section class="page cover">
+  <img class="bg" src="assets/img/cove-aerial.jpg" alt="" />
+  <div class="veil"></div>
+  <div class="pad">
+    <img class="logo" src="assets/img/logo-banner.png" alt="Pescara Boat View" />
+    <h1 class="ctitle disp">Il mare degli abruzzesi,<br><b>mostrato da chi ci vive.</b></h1>
+    <p class="csub">Giri in barca artigianali salpando da Pescara, lungo la Costa dei Trabocchi. Calette nascoste, pranzo a bordo, tramonti. Niente di esagerato: solo mare, lentezza e cose vere.</p>
+    <div class="cmeta">
+      <span class="pill"><span class="dot"></span> Fino a 10 persone</span>
+    </div>
+    <p class="cplaces"><span class="cbar"></span>Abruzzo <i>/</i> Pescara <i>/</i> Costa dei Trabocchi</p>
+  </div>
+</section>
+
+<!-- ============ PAGE 2 — ESPERIENZE ============ -->
+<section class="page">
+  <div class="pad head">
+    <span class="kick coral">Cosa puoi fare con noi</span>
+    <div class="h-row">
+      <h2 class="h-title disp">Scegli come vivere la costa</h2>
+    </div>
+    <p class="h-lead">Proposte semplici e su misura: le combiniamo come preferisci. Una mezza giornata o un giorno intero, di mattina o al tramonto.</p>
+  </div>
+  <div class="exp-grid">
+    <article class="xcard big">
+      <img src="assets/img/coast-wide.jpg" alt="" /><div class="ov"></div>
+      <div class="tx"><span class="tag">Il classico</span><h3>Giro Costa dei Trabocchi</h3>
+      <p>Navighi sotto i trabocchi e le falesie, con soste bagno nelle calette più belle. Mezza giornata o giornata intera.</p></div>
+    </article>
+    <article class="xcard">
+      <img src="assets/img/mussels-seaview.jpg" alt="" /><div class="ov"></div>
+      <div class="tx"><span class="tag">A tavola sul mare</span><h3>Pranzo a bordo</h3>
+      <p>Cuciniamo piatti tipici a bordo, o si mangia su un trabocco.</p></div>
+    </article>
+    <article class="xcard">
+      <img src="assets/img/toast-sunset.jpg" alt="" /><div class="ov"></div>
+      <div class="tx"><span class="tag">La sera</span><h3>Sunset party</h3>
+      <p>Aperitivo mentre il sole scende sull'Adriatico.</p></div>
+    </article>
+    <article class="xcard">
+      <img src="assets/img/cove-aerial.jpg" alt="" /><div class="ov"></div>
+      <div class="tx"><span class="tag">Calette &amp; giochi</span><h3>Spiagge segrete</h3>
+      <p>Ti caliamo nelle calette col tender. Ciambelle, giochi, snorkeling.</p></div>
+    </article>
+    <article class="xcard">
+      <img src="assets/img/sunset-yacht-poster.jpg" alt="" /><div class="ov"></div>
+      <div class="tx"><span class="tag">Senza orari</span><h3>Giornata 24h</h3>
+      <p>Una giornata intera, o la domenica dal mattino alla sera.</p></div>
+    </article>
+  </div>
+  <div class="pfoot"><span></span><span class="n">02</span></div>
+</section>
+
+<!-- ============ PAGE 3 — LA ROTTA ============ -->
+<section class="page">
+  <div class="pad head">
+    <span class="kick">La rotta</span>
+    <div class="h-row"><h2 class="h-title disp">Da Pescara a Vasto</h2></div>
+    <p class="h-lead">Calette, trabocchi e borghi di mare lungo la Costa dei Trabocchi: ecco dove ti portiamo.</p>
+  </div>
+  <div class="mapwrap">
+    <img class="routeimg" src="assets/img/route-map.png" alt="Mappa della rotta da Pescara a Vasto" />
+    <span class="routeboat"><svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="15" fill="#fff" opacity=".92"/><g transform="translate(20,20) rotate(-6)" fill="#0a3550"><path d="M-12,2 L12,2 L8,9 L-8,9 Z"/><rect x="-1.2" y="-10" width="2.4" height="12"/><path d="M1.2,-9 L10,-1 L1.2,-1 Z" fill="#ff7a59"/></g></svg></span>
+  </div>
+  <div class="legend">
+    <span class="lg"><span class="d port"></span> Porti d'imbarco</span>
+    <span class="lg"><span class="d beach"></span> Calette &amp; spiagge</span>
+    <span class="lg"><span class="d route"></span> La nostra rotta</span>
+  </div>
+  <div class="mapcap disp">~ 50 km di costa, calette e trabocchi — il ritmo lo scegli tu.</div>
+  <div class="pfoot"><span></span><span class="n">03</span></div>
+</section>
+
+<!-- ============ PAGE 4 — CAPITANO / BARCA / PER CHI ============ -->
+<section class="page">
+  <div class="pad head">
+    <span class="kick coral">A bordo</span>
+    <div class="h-row"><h2 class="h-title disp">Chi ti porta, e su cosa</h2></div>
+  </div>
+  <div class="split">
+    <div class="block">
+      <div class="ph"><img src="assets/img/captain.jpg" alt="" /></div>
+      <div class="bd">
+        <span class="kick">Il capitano</span>
+        <h3>Dieci anni sulle grandi navi</h3>
+        <p>Chi ti accompagna non è un improvvisato: dieci anni come Ufficiale di Coperta Senior su navi da crociera internazionali. La stessa cura, oggi, per la tua giornata di mare.</p>
+        <div class="chips"><span>Ufficiale di Coperta Senior</span><span>Navi da 300 m</span><span>Sicurezza &amp; rotte</span></div>
+      </div>
+    </div>
+    <div class="block rev">
+      <div class="ph"><img src="assets/img/family-deck-wide.jpg" alt="" /></div>
+      <div class="bd">
+        <span class="kick">La barca</span>
+        <h3>Comoda, fatta per stare bene</h3>
+        <p>Circa 12 metri, con tettuccio abitabile e cabina riparata. Tender per scendere a riva, ciambelle e giochi, cucina a bordo su richiesta.</p>
+        <div class="chips"><span>Fino a 10 persone</span><span>Tender</span><span>Cucina a bordo</span></div>
+      </div>
+    </div>
+    <div>
+      <span class="kick">Per chi</span>
+      <div class="who3">
+        <div class="w"><img src="assets/img/family-deck.jpg" alt=""><div class="ov"></div><span>Famiglie</span></div>
+        <div class="w"><img src="assets/img/group-friends.jpg" alt=""><div class="ov"></div><span>Gruppi</span></div>
+        <div class="w"><img src="assets/img/couple-toast.jpg" alt=""><div class="ov"></div><span>Coppie</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="pfoot"><span></span><span class="n">04</span></div>
+</section>
+
+<!-- ============ PAGE 5 — COME FUNZIONA / CONTATTI ============ -->
+<section class="page p5">
+  <div class="p5-pad">
+    <div class="head">
+      <span class="kick">Come funziona</span>
+      <div class="h-row"><h2 class="h-title disp">Semplice come una telefonata</h2></div>
+      <p class="h-lead">Niente prenotazioni online o calendari complicati. Ci pensiamo noi, da persona a persona — in italiano, inglese o russo.</p>
+    </div>
+    <div class="how-flow">
+      <div class="step"><div class="num">1</div><h4>Ci scrivi</h4><p>Un messaggio su WhatsApp con giorno, persone e che giro ti piace.</p></div>
+      <div class="step"><div class="num">2</div><h4>Costruiamo il giro</h4><p>Ti proponiamo orario, partenza e pranzo. Su misura, senza sorprese.</p></div>
+      <div class="step"><div class="num">3</div><h4>Si salpa</h4><p>Ti aspettiamo al porto. Pensa solo a costume e buonumore.</p></div>
+    </div>
+    <p class="closing"><span class="cl-rule"></span><span>Dicci come immaginavi il tuo giro in mare<br>e noi te lo facciamo vivere.</span></p>
+    <a class="cta" href="https://wa.me/390000000000?text=Ciao!%20Vorrei%20informazioni%20su%20un%20giro%20in%20barca%20sulla%20Costa%20dei%20Trabocchi%20%F0%9F%9A%A4" target="_blank" rel="noopener">
+      <img class="bg" src="assets/img/coast-wide.jpg" alt="" />
+      <div class="in">
+        <h3 class="disp">Raccontaci il tuo giro di mare.</h3>
+        <span class="wa"><svg viewBox="0 0 32 32" fill="currentColor"><path d="M16 .4C7.4.4.5 7.3.5 15.9c0 2.8.7 5.4 2 7.8L.4 31.6l8.1-2.1c2.3 1.3 4.9 1.9 7.5 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.4 16 .4zm0 28.3c-2.4 0-4.7-.6-6.7-1.8l-.5-.3-4.8 1.3 1.3-4.7-.3-.5c-1.3-2.1-2-4.5-2-7 0-7.2 5.9-13.1 13.1-13.1 7.2 0 13 5.9 13 13.1 0 7.2-5.8 13-13.1 13z"/></svg> WhatsApp — scrivici ora</span>
+        <p class="small">Tocca qui per scriverci · rispondiamo in giornata.</p>
+        <p class="langs">🇮🇹 Italiano · 🇬🇧 English · 🇷🇺 Русский</p>
+      </div>
+    </a>
+  </div>
+  <div class="pfoot"><span></span><span class="n">05</span></div>
+</section>
+
+</body>
+</html>

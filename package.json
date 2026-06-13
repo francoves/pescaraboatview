@@ -1,0 +1,24 @@
+{
+  "name": "barca-sui-trabocchi",
+  "version": "1.0.0",
+  "description": "One-page site for handcrafted boat trips on the **Costa dei Trabocchi** (Abruzzo, Italy). Departures from **Pescara** and **Francavilla al Mare**. Trilingual: 🇮🇹 IT · 🇬🇧 EN · 🇷🇺 RU.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francoves/pescaraboatview.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/francoves/pescaraboatview/issues"
+  },
+  "homepage": "https://github.com/francoves/pescaraboatview#readme",
+  "dependencies": {
+    "puppeteer-core": "^23.11.1"
+  }
+}
