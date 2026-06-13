@@ -8,8 +8,10 @@
   --teal-d:#0f7d80;
   --coral:#ff7a59;
   --coral-d:#f1633f;
-  --sand:#f6efe6;
-  --sand-2:#efe6d8;
+  --sky-1:#f2f9fd;
+  --sky-2:#e7f3fb;
+  --sky-3:#d4eaf6;
+  --sky-line:#cfe6f2;
   --ink:#0d1b24;
   --ink-soft:#41525c;
   --white:#ffffff;
@@ -27,7 +29,7 @@ html{scroll-behavior:smooth}
 body{
   font-family:"Manrope",system-ui,sans-serif;
   color:var(--ink);
-  background:var(--sand);
+  background:#ffffff;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
@@ -66,6 +68,8 @@ section{position:relative}
 .btn-ghost:hover{background:rgba(255,255,255,.22)}
 .btn-wa{background:rgba(255,255,255,.14);color:#fff;border:1.5px solid rgba(255,255,255,.35);padding:.6rem 1.05rem;font-size:.9rem}
 .btn-wa:hover{background:var(--wa);color:#04321a;border-color:var(--wa)}
+.nav.scrolled .btn-wa{background:var(--wa);color:#04321a;border-color:var(--wa);box-shadow:0 8px 20px -10px rgba(37,211,102,.55)}
+.nav.scrolled .btn-wa:hover{background:#1fbd5b;border-color:#1fbd5b}
 .btn-sm{padding:.7rem 1.15rem;font-size:.9rem}
 .btn-lg{padding:1.05rem 2rem;font-size:1.08rem}
 .wa-ico{width:1.15em;height:1.15em;display:inline-block;flex:0 0 auto}
@@ -74,22 +78,22 @@ section{position:relative}
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:60;
   display:flex;align-items:center;justify-content:space-between;
-  padding:1.1rem clamp(1rem,4vw,2.6rem);
+  padding:.45rem clamp(1rem,4vw,2.6rem);
   transition:background .35s,padding .35s,box-shadow .35s;
 }
 .nav.scrolled{
-  background:rgba(246,239,230,.82);
+  background:rgba(255,255,255,.86);
   backdrop-filter:blur(14px) saturate(1.4);
   box-shadow:0 1px 0 rgba(13,27,36,.07);
-  padding-top:.7rem;padding-bottom:.7rem;
+  padding-top:.35rem;padding-bottom:.35rem;
 }
 .brand{display:inline-flex;align-items:center;gap:.5rem;font-family:"Fraunces",serif;font-weight:600;font-size:1.3rem;color:#fff;transition:color .35s}
 .nav.scrolled .brand{color:var(--navy)}
 .brand-mark{font-size:1.15rem;transform:translateY(-1px)}
 .brand-thin{font-weight:400;opacity:.85}
-.brand-logo{height:34px;width:auto;display:block;background:#fff;border-radius:11px;padding:5px 11px;box-shadow:0 8px 22px -10px rgba(6,37,54,.4);transition:height .35s}
-.nav.scrolled .brand-logo{height:30px;box-shadow:0 4px 12px -8px rgba(6,37,54,.35)}
-.brand-logo-footer{height:40px}
+.brand-logo{height:56px;width:auto;display:block;background:#fff;border-radius:10px;padding:3px 9px;box-shadow:0 8px 22px -10px rgba(6,37,54,.4);transition:height .35s}
+.nav.scrolled .brand-logo{height:48px;box-shadow:0 4px 12px -8px rgba(6,37,54,.35)}
+.brand-logo-footer{height:96px;border-radius:14px;padding:8px 14px}
 .nav-links{display:flex;gap:1.7rem}
 .nav-links a{font-weight:600;font-size:.95rem;color:rgba(255,255,255,.92);position:relative;padding:.2rem 0;transition:color .35s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--coral);transition:width .3s var(--ease)}
@@ -165,8 +169,7 @@ section{position:relative}
 .card-cta p{color:rgba(255,255,255,.88);margin-bottom:1.2rem}
 
 /* ---------- who ---------- */
-.who{background:linear-gradient(180deg,transparent,var(--sand-2));max-width:none}
-.who .section-head,.who .who-grid{max-width:var(--maxw);margin-left:auto;margin-right:auto}
+.who{background:var(--sky-2);border-radius:40px}
 .who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
 .who-card{position:relative;border-radius:var(--radius-lg);overflow:hidden;min-height:380px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:var(--shadow);isolation:isolate;transition:transform .4s var(--ease)}
 .who-card:hover{transform:translateY(-6px)}
@@ -188,6 +191,7 @@ section{position:relative}
 .note{font-size:.86rem;font-style:italic;color:#8a97a0}
 
 /* ---------- depart ---------- */
+.depart{background:var(--sky-1);border-radius:40px}
 .dep-main{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.4rem,4vw,2.8rem);align-items:center;
   background:#fff;border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow);max-width:960px;margin:0 auto}
 .dep-photo{position:relative;aspect-ratio:16/10;height:100%}
@@ -272,6 +276,8 @@ section{position:relative}
   .hero-badges{gap:1.6rem}
   .btn-wa span:not(.wa-ico){display:none}
   .btn-wa{padding:.6rem .75rem}
+  .brand-logo{height:46px;padding:3px 8px}
+  .brand-logo-footer{height:78px}
   .footer-bar{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){
