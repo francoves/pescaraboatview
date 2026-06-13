@@ -1,26 +1,30 @@
 /* =========================================================
    Pescara Boat View — coastal route map (MapLibre GL)
+   Fixed showcase: locked view, permanent labels, offshore route.
    Style: Carto Positron (free, no token), recolored to brand sea tones.
    ========================================================= */
 (function () {
   const el = document.getElementById("map");
   if (!el || !window.maplibregl) return;
 
-  // Points of interest along the Costa dei Trabocchi (lng, lat)
+  // Markers: ports (coral) + beaches/coves (teal). side = which side the label sits.
   const POIS = [
-    { n: "Pescara",            c: [14.2156, 42.4664], major: true },
-    { n: "Francavilla al Mare", c: [14.2903, 42.4184] },
-    { n: "Ortona",             c: [14.4046, 42.3553] },
-    { n: "San Vito Chietino",  c: [14.4430, 42.2970] },
-    { n: "Fossacesia Marina",  c: [14.4920, 42.2470] },
-    { n: "Vasto",              c: [14.6680, 42.1190], major: true },
+    { n: "Pescara",            c: [14.2156, 42.4664], type: "port",  major: true, side: "r" },
+    { n: "Francavilla al Mare", c: [14.2903, 42.4184], type: "port",  side: "r" },
+    { n: "Ortona",             c: [14.4046, 42.3553], type: "port",  side: "r" },
+    { n: "Ripari di Giobbe",   c: [14.4200, 42.3360], type: "beach", side: "r" },
+    { n: "Cala Turchino",      c: [14.4600, 42.2890], type: "beach", side: "r" },
+    { n: "Punta Cavalluccio",  c: [14.4830, 42.2620], type: "beach", side: "r" },
+    { n: "Punta Aderci",       c: [14.7030, 42.1550], type: "beach", side: "l" },
+    { n: "Vasto",              c: [14.6680, 42.1190], type: "port",  major: true, side: "l" },
   ];
 
-  // Route slightly offshore (east) so it reads as a sea route
-  const route = {
-    type: "Feature",
-    geometry: { type: "LineString", coordinates: POIS.map(p => [p.c[0] + 0.022, p.c[1] - 0.004]) },
-  };
+  // Route well offshore (east) so it clearly reads as a sea route
+  const ROUTE = [
+    [14.275, 42.462], [14.345, 42.415], [14.420, 42.378],
+    [14.490, 42.340], [14.535, 42.295], [14.575, 42.250],
+    [14.660, 42.195], [14.730, 42.150],
+  ];
 
   let started = false;
   function init() {
@@ -29,16 +33,11 @@
     const map = new maplibregl.Map({
       container: "map",
       style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-      bounds: [[14.16, 42.07], [14.76, 42.51]],
-      fitBoundsOptions: { padding: { top: 40, bottom: 40, left: 40, right: 40 } },
-      dragRotate: false,
-      pitchWithRotate: false,
+      bounds: [[14.18, 42.09], [14.78, 42.50]],
+      fitBoundsOptions: { padding: { top: 46, bottom: 46, left: 60, right: 60 } },
+      interactive: false,            // fully fixed view
+      attributionControl: { compact: true },
     });
-
-    // keep the view "fixed": page scroll is never hijacked
-    map.scrollZoom.disable();
-    map.touchZoomRotate.disableRotation();
-    map.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
 
     map.on("load", () => {
       // brand sea colour on water layers
@@ -50,12 +49,13 @@
         });
       } catch (e) {}
 
-      // route line
+      // route line (glow + dashed)
+      const route = { type: "Feature", geometry: { type: "LineString", coordinates: ROUTE } };
       map.addSource("route", { type: "geojson", data: route });
       map.addLayer({
         id: "route-glow", type: "line", source: "route",
         layout: { "line-cap": "round", "line-join": "round" },
-        paint: { "line-color": "#15a3a3", "line-width": 8, "line-opacity": 0.18 },
+        paint: { "line-color": "#15a3a3", "line-width": 9, "line-opacity": 0.16 },
       });
       map.addLayer({
         id: "route-line", type: "line", source: "route",
@@ -63,13 +63,13 @@
         paint: { "line-color": "#0f7d80", "line-width": 3, "line-dasharray": [1.4, 1.4] },
       });
 
-      // POI markers + labels
+      // permanent labelled pins
       POIS.forEach(p => {
-        const pin = document.createElement("div");
-        pin.className = "map-pin" + (p.major ? " map-pin-major" : "");
-        new maplibregl.Marker({ element: pin })
+        const mk = document.createElement("div");
+        mk.className = "map-mk map-mk-" + p.type + (p.major ? " map-mk-major" : "") + " side-" + p.side;
+        mk.innerHTML = '<span class="map-dot"></span><span class="map-lbl">' + p.n + "</span>";
+        new maplibregl.Marker({ element: mk, anchor: p.side === "l" ? "right" : "left" })
           .setLngLat(p.c)
-          .setPopup(new maplibregl.Popup({ offset: 16, closeButton: false }).setText(p.n))
           .addTo(map);
       });
     });

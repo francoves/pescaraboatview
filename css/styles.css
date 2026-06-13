@@ -203,11 +203,14 @@ section{position:relative}
 /* ---------- map ---------- */
 .map-wrap{position:relative;border-radius:32px;overflow:hidden;height:clamp(380px,56vh,560px);box-shadow:var(--shadow);border:1px solid var(--sky-line);max-width:var(--maxw);margin:0 auto;background:var(--sky-1)}
 #map{width:100%;height:100%}
-.map-pin{width:14px;height:14px;border-radius:50%;background:var(--teal);border:3px solid #fff;box-shadow:0 2px 8px rgba(6,37,54,.45);cursor:pointer;transition:transform .2s}
-.map-pin:hover{transform:scale(1.3)}
-.map-pin-major{width:20px;height:20px;background:var(--coral);border-width:4px}
-.maplibregl-popup-content{font-family:"Manrope",sans-serif;font-weight:700;font-size:.85rem;color:var(--navy);border-radius:10px;padding:.4rem .7rem;box-shadow:var(--shadow-soft)}
-.maplibregl-ctrl-group{border-radius:10px!important;overflow:hidden}
+.map-mk{display:flex;align-items:center;gap:6px;white-space:nowrap;pointer-events:none}
+.map-mk.side-l{flex-direction:row-reverse}
+.map-dot{width:12px;height:12px;border-radius:50%;background:var(--teal);border:2.5px solid #fff;box-shadow:0 1px 5px rgba(6,37,54,.5);flex:0 0 auto}
+.map-mk-port .map-dot{background:var(--coral)}
+.map-mk-major .map-dot{width:16px;height:16px;border-width:3px}
+.map-lbl{font-family:"Manrope",sans-serif;font-weight:700;font-size:.72rem;line-height:1;color:var(--navy);background:rgba(255,255,255,.92);padding:3px 7px;border-radius:6px;box-shadow:0 1px 5px rgba(6,37,54,.2)}
+.map-mk-beach .map-lbl{color:var(--teal-d)}
+.maplibregl-ctrl-attrib{font-size:10px}
 
 /* ---------- depart ---------- */
 .depart{background:var(--sky-1);border-radius:40px}
