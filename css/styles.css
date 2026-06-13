@@ -196,6 +196,10 @@ section{position:relative}
 .boat-text p{color:var(--ink-soft)}
 .note{font-size:.86rem;font-style:italic;color:#8a97a0}
 
+/* ---------- captain ---------- */
+.cap-chips{list-style:none;display:flex;flex-wrap:wrap;gap:.55rem;margin-top:1.5rem}
+.cap-chips li{background:var(--sky-2);color:var(--navy);font-weight:600;font-size:.86rem;padding:.5rem .95rem;border-radius:100px;border:1px solid var(--sky-line)}
+
 /* ---------- depart ---------- */
 .depart{background:var(--sky-1);border-radius:40px}
 .dep-main{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.4rem,4vw,2.8rem);align-items:center;
