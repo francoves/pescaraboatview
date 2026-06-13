@@ -212,6 +212,22 @@ section{position:relative}
 .map-mk-beach .map-lbl{color:var(--teal-d)}
 .maplibregl-ctrl-attrib{font-size:10px}
 
+/* ---------- intro + map background ---------- */
+.intromap{position:relative;min-height:clamp(560px,82vh,760px);overflow:hidden;display:flex;align-items:center}
+.intromap-map{position:absolute;inset:0;background:var(--sky-1)}
+.intromap-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.92) 30%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 70%)}
+.intromap-content{position:relative;z-index:2;max-width:600px;padding:clamp(2.5rem,6vw,4rem) clamp(1.3rem,5vw,3rem)}
+.intromap-content h2{margin:.4rem 0 1rem}
+.intromap-content p{color:var(--ink-soft);font-size:1.04rem;margin-top:.9rem;max-width:44ch}
+.intromap-cap{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.6rem;font-weight:700;font-size:.78rem;color:var(--teal-d);text-transform:uppercase;letter-spacing:.1em}
+.intromap-dot{width:9px;height:9px;border-radius:50%;background:var(--coral);flex:0 0 auto;box-shadow:0 0 0 4px rgba(255,122,89,.2)}
+@media(max-width:760px){
+  .intromap{align-items:flex-end;min-height:88svh}
+  .intromap-scrim{background:linear-gradient(180deg,rgba(255,255,255,0) 4%,rgba(255,255,255,.5) 32%,rgba(255,255,255,.97) 64%)}
+  .intromap-content{padding-bottom:2.4rem}
+  .intromap-content p{font-size:.98rem}
+}
+
 /* ---------- depart ---------- */
 .depart{background:var(--sky-1);border-radius:40px}
 .dep-main{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(1.4rem,4vw,2.8rem);align-items:center;

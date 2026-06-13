@@ -30,13 +30,28 @@
   function init() {
     if (started) return; started = true;
 
+    const BOUNDS = [[14.18, 42.09], [14.78, 42.50]];
+    // keep the coast framed clear of the overlaid text (right side on desktop, top on mobile)
+    const pad = () => {
+      const w = el.clientWidth || 900;
+      return w > 760
+        ? { top: 40, bottom: 40, left: Math.min(Math.round(w * 0.42), 470), right: 40 }
+        : { top: 36, bottom: 200, left: 28, right: 28 };
+    };
+
     const map = new maplibregl.Map({
       container: "map",
       style: "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
-      bounds: [[14.18, 42.09], [14.78, 42.50]],
-      fitBoundsOptions: { padding: { top: 46, bottom: 46, left: 60, right: 60 } },
+      bounds: BOUNDS,
+      fitBoundsOptions: { padding: pad() },
       interactive: false,            // fully fixed view
       attributionControl: { compact: true },
+    });
+
+    let rt;
+    window.addEventListener("resize", () => {
+      clearTimeout(rt);
+      rt = setTimeout(() => map.fitBounds(BOUNDS, { padding: pad(), duration: 0 }), 150);
     });
 
     map.on("load", () => {
