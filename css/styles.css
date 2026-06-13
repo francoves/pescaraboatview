@@ -214,7 +214,7 @@ section{position:relative}
 
 /* ---------- intro + map background ---------- */
 .intromap{position:relative;min-height:clamp(560px,82vh,760px);overflow:hidden;display:flex;align-items:center}
-.intromap-map{position:absolute;inset:0;background:var(--sky-1)}
+.intromap-map{position:absolute;inset:0;background:#dceff8 url('../assets/img/route-map-desktop.png') center/cover no-repeat}
 .intromap-scrim{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(255,255,255,.98) 0%,rgba(255,255,255,.92) 30%,rgba(255,255,255,.55) 50%,rgba(255,255,255,0) 70%)}
 .intromap-content{position:relative;z-index:2;max-width:600px;padding:clamp(2.5rem,6vw,4rem) clamp(1.3rem,5vw,3rem)}
 .intromap-content h2{margin:.4rem 0 1rem}
@@ -228,11 +228,12 @@ section{position:relative}
 .cap-rule{flex:0 0 22px;height:1px;background:var(--sky-line)}
 .cap-text{font-family:"Bricolage Grotesque","Manrope",serif;font-size:1.06rem;font-weight:500;color:var(--navy)}
 @media(max-width:760px){
-  .intromap{align-items:flex-end;min-height:82svh}
-  .intromap-scrim{background:linear-gradient(180deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0) 46%,rgba(255,255,255,.6) 62%,rgba(255,255,255,.98) 80%)}
-  .intromap-content{padding:1.3rem 1.3rem 1.9rem}
-  .intromap-content h2{margin:.2rem 0 .8rem}
-  .intromap-content p{font-size:.96rem;margin-top:.7rem}
+  .intromap{display:flex;flex-direction:column;align-items:stretch;min-height:0;overflow:visible}
+  .intromap-map{position:relative;inset:auto;height:40svh;min-height:240px;background-image:url('../assets/img/route-map.png');background-position:center;background-size:cover;border-bottom:1px solid var(--sky-line)}
+  .intromap-scrim{display:none}
+  .intromap-content{position:relative;z-index:1;padding:1.9rem 1.3rem 1.2rem}
+  .intromap-content h2{margin:.2rem 0 .9rem}
+  .intromap-content p{font-size:.97rem;margin-top:.7rem}
 }
 
 /* ---------- depart ---------- */

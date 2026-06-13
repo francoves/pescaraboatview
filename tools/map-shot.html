@@ -34,9 +34,11 @@ const POIS=[
 const ROUTE=[[14.275,42.462],[14.345,42.415],[14.420,42.378],[14.490,42.340],[14.535,42.295],[14.575,42.250],[14.660,42.195],[14.730,42.150]];
 function bearing(a,b){const r=d=>d*Math.PI/180,D=x=>x*180/Math.PI;const y=Math.sin(r(b[0]-a[0]))*Math.cos(r(b[1]));const x=Math.cos(r(a[1]))*Math.sin(r(b[1]))-Math.sin(r(a[1]))*Math.cos(r(b[1]))*Math.cos(r(b[0]-a[0]));return (D(Math.atan2(y,x))+360)%360;}
 const BEARING=bearing([14.2156,42.4664],[14.6680,42.1190])-90;
+const q=new URLSearchParams(location.search);
+const P={top:+(q.get("pt")||120),bottom:+(q.get("pb")||120),left:+(q.get("pl")||90),right:+(q.get("pr")||90)};
 const map=new maplibregl.Map({container:"map",style:"https://basemaps.cartocdn.com/gl/positron-gl-style/style.json",
   bounds:[[14.18,42.09],[14.78,42.50]],bearing:BEARING,preserveDrawingBuffer:true,fadeDuration:0,
-  fitBoundsOptions:{padding:{top:120,bottom:120,left:90,right:90},bearing:BEARING},interactive:false});
+  fitBoundsOptions:{padding:P,bearing:BEARING},interactive:false});
 map.on("load",()=>{
   try{map.getStyle().layers.forEach(l=>{if(l.type==="fill"&&/water|ocean|sea|marine/i.test(l.id))map.setPaintProperty(l.id,"fill-color","#cfe8f4");});}catch(e){}
   map.addSource("route",{type:"geojson",data:{type:"Feature",geometry:{type:"LineString",coordinates:ROUTE}}});
