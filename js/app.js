@@ -45,7 +45,7 @@ function applyLang(l){
 
   // whatsapp + mail links
   const wa = waLink(l);
-  ["navWa","heroWa","bigWa","waFloat"].forEach(id=>{
+  ["navWa","heroWa","bigWa","waFloat","depWa"].forEach(id=>{
     const el = document.getElementById(id);
     if (el) el.href = wa;
   });

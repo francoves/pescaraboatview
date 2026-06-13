@@ -1,0 +1,12 @@
+# heavy raw originals — only web-optimized versions ship
+assets/_raw_video
+
+# dev-only
+tools
+node_modules
+.git
+
+# secrets
+.freepik-key
+.env
+.env.*

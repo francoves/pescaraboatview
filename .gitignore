@@ -10,3 +10,5 @@ Thumbs.db
 
 # heavy raw video originals (web versions are committed)
 assets/_raw_video/
+
+.vercel
