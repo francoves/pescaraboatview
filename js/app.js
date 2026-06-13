@@ -39,13 +39,13 @@ function applyLang(l){
   });
 
   // active state on buttons
-  document.querySelectorAll("#lang button").forEach(b=>{
+  document.querySelectorAll("#lang button, #mmenuLang button").forEach(b=>{
     b.classList.toggle("is-active", b.dataset.lang === l);
   });
 
   // whatsapp + mail links
   const wa = waLink(l);
-  ["navWa","heroWa","bigWa","waFloat","depWa"].forEach(id=>{
+  ["navWa","heroWa","bigWa","waFloat","depWa","mmenuWa"].forEach(id=>{
     const el = document.getElementById(id);
     if (el) el.href = wa;
   });
@@ -61,10 +61,12 @@ function applyLang(l){
 }
 
 /* ---------- language buttons ---------- */
-document.getElementById("lang").addEventListener("click", e=>{
+function onLangClick(e){
   const b = e.target.closest("button");
   if (b) applyLang(b.dataset.lang);
-});
+}
+document.getElementById("lang").addEventListener("click", onLangClick);
+document.getElementById("mmenuLang").addEventListener("click", onLangClick);
 
 /* ---------- nav scroll ---------- */
 const nav = document.getElementById("nav");
@@ -74,15 +76,23 @@ window.addEventListener("scroll", onScroll, {passive:true});
 
 /* ---------- burger / mobile menu ---------- */
 const burger = document.getElementById("burger");
-const navLinks = document.getElementById("navLinks");
-burger.addEventListener("click", ()=>{
-  burger.classList.toggle("open");
-  navLinks.classList.toggle("open");
-});
-navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click", ()=>{
+const mmenu = document.getElementById("mmenu");
+function closeMenu(){
+  mmenu.classList.remove("open");
   burger.classList.remove("open");
-  navLinks.classList.remove("open");
-}));
+  burger.setAttribute("aria-expanded","false");
+  document.body.style.overflow="";
+}
+function toggleMenu(){
+  const open = mmenu.classList.toggle("open");
+  burger.classList.toggle("open", open);
+  burger.setAttribute("aria-expanded", open ? "true" : "false");
+  document.body.style.overflow = open ? "hidden" : "";
+}
+burger.addEventListener("click", toggleMenu);
+document.getElementById("mmenuClose").addEventListener("click", closeMenu);
+mmenu.addEventListener("click", e=>{ if (e.target === mmenu) closeMenu(); });
+mmenu.querySelectorAll(".mmenu-links a").forEach(a=>a.addEventListener("click", closeMenu));
 
 /* ---------- reveal on scroll ---------- */
 const io = new IntersectionObserver((entries)=>{

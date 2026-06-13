@@ -40,9 +40,10 @@ window.I18N = {
     "how.s3.t":"Si salpa","how.s3.p":"Ti aspettiamo al porto. Pensa solo a costume e buonumore.",
     "ct.eyebrow":"Contatti","ct.title":"Raccontaci il tuo giro di mare","ct.sub":"Rispondiamo su WhatsApp in giornata. In italiano, inglese o russo.","ct.cta":"Scrivici su WhatsApp","ct.or":"oppure","ct.mail":"scrivici una mail",
     "ft.dream":"Dicci come immaginavi il tuo giro in mare e noi te lo facciamo vivere.",
-    "ft.tag":"Giri in barca sulla Costa dei Trabocchi — Pescara & Francavilla.","ft.exp":"Esperienze","ft.info":"Info",
+    "ft.tag":"Giri in barca da Pescara fino alla Costa dei Trabocchi, vivi l'esperienza.","ft.exp":"Esperienze","ft.info":"Info",
     "ft.legal":"© 2026 Pescara Boat View · Attività occasionale regolarmente comunicata · P.IVA / C.F. da inserire",
     "ft.credit":"Immagini di repertorio a scopo illustrativo.",
+    "mmenu.tag":"Da Pescara alla Costa dei Trabocchi. Vivi il mare con chi ci vive.",
     "wa.msg":"Ciao! Vorrei informazioni su un giro in barca sulla Costa dei Trabocchi 🚤"
   },
 
@@ -83,9 +84,10 @@ window.I18N = {
     "how.s3.t":"We set sail","how.s3.p":"We'll be waiting at the port. Just bring your swimsuit and good mood.",
     "ct.eyebrow":"Contact","ct.title":"Tell us about your day at sea","ct.sub":"We reply on WhatsApp the same day. In Italian, English or Russian.","ct.cta":"Message us on WhatsApp","ct.or":"or","ct.mail":"send us an email",
     "ft.dream":"Tell us how you pictured your day at sea — and we'll make it real.",
-    "ft.tag":"Boat trips on the Costa dei Trabocchi — Pescara & Francavilla.","ft.exp":"Experiences","ft.info":"Info",
+    "ft.tag":"Boat trips from Pescara to the Costa dei Trabocchi — live the experience.","ft.exp":"Experiences","ft.info":"Info",
     "ft.legal":"© 2026 Pescara Boat View · Occasional activity, duly registered · VAT / Tax code to be added",
     "ft.credit":"Stock images for illustrative purposes.",
+    "mmenu.tag":"From Pescara to the Costa dei Trabocchi. Live the sea with the locals.",
     "wa.msg":"Hi! I'd like info about a boat trip on the Costa dei Trabocchi 🚤"
   },
 
@@ -126,9 +128,10 @@ window.I18N = {
     "how.s3.t":"Отплываем","how.s3.p":"Ждём вас в порту. Возьмите только купальник и хорошее настроение.",
     "ct.eyebrow":"Контакты","ct.title":"Расскажите о вашем дне на море","ct.sub":"Отвечаем в WhatsApp в тот же день. По-итальянски, по-английски или по-русски.","ct.cta":"Написать в WhatsApp","ct.or":"или","ct.mail":"напишите нам на почту",
     "ft.dream":"Расскажите, каким вы представляли свой день на море — и мы воплотим его.",
-    "ft.tag":"Прогулки на лодке по Коста-дей-Трабокки — Пескара и Франкавилла.","ft.exp":"Программы","ft.info":"Информация",
+    "ft.tag":"Прогулки на лодке из Пескары до Коста-дей-Трабокки — проживите этот опыт.","ft.exp":"Программы","ft.info":"Информация",
     "ft.legal":"© 2026 Pescara Boat View · Сезонная деятельность, оформлена официально · ИНН/VAT будет добавлен",
     "ft.credit":"Стоковые изображения в иллюстративных целях.",
+    "mmenu.tag":"Из Пескары до Коста-дей-Трабокки. Проживите море с местными.",
     "wa.msg":"Здравствуйте! Хочу узнать о прогулке на лодке по Коста-дей-Трабокки 🚤"
   }
 };
