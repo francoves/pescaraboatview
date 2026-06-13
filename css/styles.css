@@ -87,6 +87,9 @@ section{position:relative}
 .nav.scrolled .brand{color:var(--navy)}
 .brand-mark{font-size:1.15rem;transform:translateY(-1px)}
 .brand-thin{font-weight:400;opacity:.85}
+.brand-logo{height:34px;width:auto;display:block;background:#fff;border-radius:11px;padding:5px 11px;box-shadow:0 8px 22px -10px rgba(6,37,54,.4);transition:height .35s}
+.nav.scrolled .brand-logo{height:30px;box-shadow:0 4px 12px -8px rgba(6,37,54,.35)}
+.brand-logo-footer{height:40px}
 .nav-links{display:flex;gap:1.7rem}
 .nav-links a{font-weight:600;font-size:.95rem;color:rgba(255,255,255,.92);position:relative;padding:.2rem 0;transition:color .35s}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:-3px;width:0;height:2px;background:var(--coral);transition:width .3s var(--ease)}
@@ -124,6 +127,15 @@ section{position:relative}
 .scroll-hint span{position:absolute;top:8px;left:50%;width:4px;height:8px;background:#fff;border-radius:4px;transform:translateX(-50%);animation:scrolldot 1.6s infinite}
 @keyframes scrolldot{0%{opacity:0;top:8px}40%{opacity:1}80%{opacity:0;top:22px}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* ---------- video band ---------- */
+.vband{position:relative;height:clamp(440px,72vh,720px);display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.vband-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.vband-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(6,37,54,.6),rgba(6,37,54,.35) 40%,rgba(6,37,54,.72))}
+.vband-text{max-width:780px;padding:0 1.4rem;animation:fadeUp 1s var(--ease) both}
+.vband-text .kicker{color:#bfe9e9;margin-bottom:.9rem}
+.vband-text .h2{text-shadow:0 4px 24px rgba(0,0,0,.3)}
+.vband-sub{margin:1.1rem auto 0;color:rgba(255,255,255,.92);font-size:1.08rem;max-width:54ch}
 
 /* ---------- layout helpers ---------- */
 .section{max-width:var(--maxw);margin:0 auto;padding:clamp(4rem,9vw,7.5rem) clamp(1.1rem,4vw,2rem)}

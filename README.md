@@ -1,4 +1,4 @@
-# Trabocchi Boat 🚤
+# Pescara Boat View 🚤
 
 One-page site for handcrafted boat trips on the **Costa dei Trabocchi** (Abruzzo, Italy).
 Departures from **Pescara** and **Francavilla al Mare**. Trilingual: 🇮🇹 IT · 🇬🇧 EN · 🇷🇺 RU.
@@ -11,7 +11,7 @@ All in **`js/app.js`**, top of file (`CONFIG`):
 - `email` → your contact email.
 
 Other quick edits:
-- Brand name "Trabocchi Boat" → search/replace in `index.html`, `js/i18n.js`.
+- Brand name "Pescara Boat View" → search/replace in `index.html`, `js/i18n.js`.
 - Legal line (P.IVA / C.F.) → key `ft.legal` in `js/i18n.js` (3 languages).
 - Replace stock media in `assets/` with your real boat photos/videos (keep the same filenames and they just work).
 

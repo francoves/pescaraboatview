@@ -1,5 +1,5 @@
 /* =========================================================
-   Trabocchi Boat — app
+   Pescara Boat View — app
    ========================================================= */
 
 /* 🔧 MODIFICA QUI — i tuoi contatti.
@@ -54,7 +54,7 @@ function applyLang(l){
   });
   const mail = document.getElementById("mailLink");
   if (mail){
-    const subj = encodeURIComponent("Trabocchi Boat — richiesta info");
+    const subj = encodeURIComponent("Pescara Boat View — richiesta info");
     mail.href = `mailto:${CONFIG.email}?subject=${subj}`;
     if (t["ct.mail"]) mail.textContent = t["ct.mail"];
   }

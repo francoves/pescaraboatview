@@ -1,5 +1,5 @@
 /* =========================================================
-   Trabocchi Boat — i18n dictionary (IT / EN / RU)
+   Pescara Boat View — i18n dictionary (IT / EN / RU)
    IT text also lives inline in index.html (SEO + no-JS fallback)
    ========================================================= */
 window.I18N = {
@@ -9,11 +9,12 @@ window.I18N = {
     "hero.title":"Il mare degli abruzzesi,<br>mostrato da chi ci vive.",
     "hero.sub":"Giri in barca artigianali da Pescara e Francavilla. Calette nascoste, pranzo a bordo, tramonti. Niente di esagerato: solo mare, lentezza e cose vere. Fino a 10 persone.",
     "hero.cta1":"Scrivici su WhatsApp","hero.cta2":"Scopri le esperienze",
-    "hero.b1":"persone max","hero.b2":"di barca","hero.b3":"porti di partenza",
+    "hero.b1":"persone max","hero.b2":"di barca","hero.b3":"punti d'imbarco",
     "intro.eyebrow":"Il sogno",
     "intro.title":"Non un tour. Una giornata di mare con amici del posto.",
     "intro.p1":"Siamo gente di qui. Conosciamo le calette dove l'acqua è più chiara, i trabocchi dove si mangia il pesce appena pescato, l'ora giusta in cui il sole si appoggia sull'Adriatico. Ti portiamo lì, con calma, come faremmo con un amico in visita.",
     "intro.p2":"Barca comoda, tender per scendere a riva, ciambelle e giochi per i bambini, e se vuoi cuciniamo a bordo cose semplici e nostre. Tu scegli il ritmo: un'oretta al tramonto o un'intera giornata da svegliare i ricci.",
+    "band.kicker":"A bordo","band.title":"Si naviga, ci si tuffa, si mangia bene","band.sub":"Olio nuovo sul pane, spaghetti alle vongole, un tuffo nell'acqua chiara e un brindisi al tramonto. La giornata vera, senza fretta.",
     "exp.eyebrow":"Le esperienze","exp.title":"Scegli come vivere la costa","exp.lead":"Proposte semplici e su misura. Le combiniamo come preferisci — basta dircelo.",
     "exp.c1.tag":"Il classico","exp.c1.title":"Giro Costa dei Trabocchi","exp.c1.text":"Navighi sotto i trabocchi e le falesie, soste bagno nelle calette più belle. Mezza giornata o giornata intera.",
     "exp.c2.tag":"A tavola sul mare","exp.c2.title":"Pranzo a bordo o ai trabocchi","exp.c2.text":"Cuciniamo a bordo piatti tipici, oppure ti portiamo a mangiare su un trabocco. Pesce, sole e niente fretta.",
@@ -40,7 +41,7 @@ window.I18N = {
     "ct.eyebrow":"Contatti","ct.title":"Raccontaci il tuo giro di mare","ct.sub":"Rispondiamo su WhatsApp in giornata. In italiano, inglese o russo.","ct.cta":"Scrivici su WhatsApp","ct.or":"oppure","ct.mail":"scrivici una mail",
     "ft.dream":"Dicci come immaginavi il tuo giro in mare e noi te lo facciamo vivere.",
     "ft.tag":"Giri in barca sulla Costa dei Trabocchi — Pescara & Francavilla.","ft.exp":"Esperienze","ft.info":"Info",
-    "ft.legal":"© 2026 Trabocchi Boat · Attività occasionale regolarmente comunicata · P.IVA / C.F. da inserire",
+    "ft.legal":"© 2026 Pescara Boat View · Attività occasionale regolarmente comunicata · P.IVA / C.F. da inserire",
     "ft.credit":"Immagini di repertorio a scopo illustrativo.",
     "wa.msg":"Ciao! Vorrei informazioni su un giro in barca sulla Costa dei Trabocchi 🚤"
   },
@@ -51,11 +52,12 @@ window.I18N = {
     "hero.title":"The Abruzzo sea,<br>shown by the locals.",
     "hero.sub":"Handcrafted boat trips from Pescara and Francavilla. Hidden coves, lunch on board, sunsets. Nothing over the top: just the sea, slow time and the real thing. Up to 10 people.",
     "hero.cta1":"Message us on WhatsApp","hero.cta2":"See the experiences",
-    "hero.b1":"people max","hero.b2":"of boat","hero.b3":"departure ports",
+    "hero.b1":"people max","hero.b2":"of boat","hero.b3":"boarding points",
     "intro.eyebrow":"The dream",
     "intro.title":"Not a tour. A day at sea with local friends.",
     "intro.p1":"We're from here. We know the coves where the water is clearest, the trabocchi (old fishing piers) where you eat fish just out of the sea, the right hour when the sun rests on the Adriatic. We take you there, slowly, the way we would with a visiting friend.",
     "intro.p2":"A comfortable boat, a tender to reach the shore, floats and games for the kids, and if you like we cook simple local dishes on board. You set the pace: an hour at sunset or a whole day by the water.",
+    "band.kicker":"On board","band.title":"Cruise, dive in, eat well","band.sub":"Fresh oil on bread, spaghetti with clams, a dive into clear water and a toast at sunset. The real day, no rush.",
     "exp.eyebrow":"The experiences","exp.title":"Choose how to live the coast","exp.lead":"Simple, tailor-made ideas. We mix them however you like — just tell us.",
     "exp.c1.tag":"The classic","exp.c1.title":"Costa dei Trabocchi cruise","exp.c1.text":"Sail beneath the trabocchi and the cliffs, swim stops in the most beautiful coves. Half day or full day.",
     "exp.c2.tag":"Dining at sea","exp.c2.title":"Lunch on board or at a trabocco","exp.c2.text":"We cook typical dishes on board, or take you to eat on a trabocco. Fish, sunshine and no rush.",
@@ -82,7 +84,7 @@ window.I18N = {
     "ct.eyebrow":"Contact","ct.title":"Tell us about your day at sea","ct.sub":"We reply on WhatsApp the same day. In Italian, English or Russian.","ct.cta":"Message us on WhatsApp","ct.or":"or","ct.mail":"send us an email",
     "ft.dream":"Tell us how you pictured your day at sea — and we'll make it real.",
     "ft.tag":"Boat trips on the Costa dei Trabocchi — Pescara & Francavilla.","ft.exp":"Experiences","ft.info":"Info",
-    "ft.legal":"© 2026 Trabocchi Boat · Occasional activity, duly registered · VAT / Tax code to be added",
+    "ft.legal":"© 2026 Pescara Boat View · Occasional activity, duly registered · VAT / Tax code to be added",
     "ft.credit":"Stock images for illustrative purposes.",
     "wa.msg":"Hi! I'd like info about a boat trip on the Costa dei Trabocchi 🚤"
   },
@@ -93,11 +95,12 @@ window.I18N = {
     "hero.title":"Море Абруццо,<br>показанное теми, кто здесь живёт.",
     "hero.sub":"Душевные прогулки на лодке из Пескары и Франкавиллы. Укромные бухты, обед на борту, закаты. Ничего лишнего — только море, неспешность и всё настоящее. До 10 человек.",
     "hero.cta1":"Написать в WhatsApp","hero.cta2":"Смотреть программы",
-    "hero.b1":"человек макс.","hero.b2":"длина лодки","hero.b3":"порта отправления",
+    "hero.b1":"человек макс.","hero.b2":"длина лодки","hero.b3":"точки посадки",
     "intro.eyebrow":"Мечта",
     "intro.title":"Не экскурсия. День на море с местными друзьями.",
     "intro.p1":"Мы отсюда. Знаем бухты с самой прозрачной водой, трабокки (старые рыбацкие мостки), где едят только что выловленную рыбу, и тот час, когда солнце ложится на Адриатику. Везём вас туда не спеша — как возили бы друга в гостях.",
     "intro.p2":"Удобная лодка, тузик, чтобы сойти на берег, круги и игры для детей, а при желании готовим на борту простые местные блюда. Ритм выбираете вы: часок на закате или целый день у воды.",
+    "band.kicker":"На борту","band.title":"Идём по морю, ныряем, вкусно едим","band.sub":"Свежее масло на хлебе, спагетти с вонголе, прыжок в прозрачную воду и тост на закате. Настоящий день, без спешки.",
     "exp.eyebrow":"Программы","exp.title":"Выберите, как прожить побережье","exp.lead":"Простые программы под вас. Сочетаем как захотите — только скажите.",
     "exp.c1.tag":"Классика","exp.c1.title":"Прогулка по Коста-дей-Трабокки","exp.c1.text":"Идём под трабокками и скалами, остановки для купания в красивейших бухтах. Полдня или целый день.",
     "exp.c2.tag":"Стол у моря","exp.c2.title":"Обед на борту или на трабокко","exp.c2.text":"Готовим местные блюда на борту или везём пообедать на трабокко. Рыба, солнце и никакой спешки.",
@@ -124,7 +127,7 @@ window.I18N = {
     "ct.eyebrow":"Контакты","ct.title":"Расскажите о вашем дне на море","ct.sub":"Отвечаем в WhatsApp в тот же день. По-итальянски, по-английски или по-русски.","ct.cta":"Написать в WhatsApp","ct.or":"или","ct.mail":"напишите нам на почту",
     "ft.dream":"Расскажите, каким вы представляли свой день на море — и мы воплотим его.",
     "ft.tag":"Прогулки на лодке по Коста-дей-Трабокки — Пескара и Франкавилла.","ft.exp":"Программы","ft.info":"Информация",
-    "ft.legal":"© 2026 Trabocchi Boat · Сезонная деятельность, оформлена официально · ИНН/VAT будет добавлен",
+    "ft.legal":"© 2026 Pescara Boat View · Сезонная деятельность, оформлена официально · ИНН/VAT будет добавлен",
     "ft.credit":"Стоковые изображения в иллюстративных целях.",
     "wa.msg":"Здравствуйте! Хочу узнать о прогулке на лодке по Коста-дей-Трабокки 🚤"
   }
