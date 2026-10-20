@@ -60,10 +60,14 @@ img{display:block;max-width:100%}
 
 /* =================== EXPERIENCES =================== */
 .exp-grid{position:absolute;left:15mm;right:15mm;top:62mm;bottom:20mm;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1.25fr 1fr 1fr;gap:6mm}
-.xcard{position:relative;border-radius:14px;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 14px 30px -18px rgba(6,37,54,.6)}
+/* NB: l'ombra sta su un elemento SENZA overflow:hidden (altrimenti in stampa
+   PDF il box-shadow si renderizza come rettangolo pieno). Le immagini/overlay
+   figli vengono arrotondati da soli con border-radius:inherit: così niente clip
+   sul padre, niente rettangolo, e le foto restano vettoriali/JPEG (PDF leggero). */
+.xcard{position:relative;border-radius:14px;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 14px 30px -18px rgba(6,37,54,.6)}
 .xcard.big{grid-column:1 / span 2}
-.xcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.xcard .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,37,54,0) 35%,rgba(6,37,54,.55) 66%,rgba(6,37,54,.92) 100%)}
+.xcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.xcard .ov{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(6,37,54,0) 35%,rgba(6,37,54,.55) 66%,rgba(6,37,54,.92) 100%)}
 .xcard .tx{position:relative;padding:8mm 7mm 6mm}
 .xcard .tag{display:inline-block;font-size:7.5pt;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);padding:3px 9px;border-radius:100px;margin-bottom:5px}
 .xcard h3{font-family:var(--disp);font-weight:600;font-size:16pt;margin-bottom:3px;letter-spacing:-.01em}
@@ -71,8 +75,8 @@ img{display:block;max-width:100%}
 .xcard p{font-size:9pt;line-height:1.4;color:rgba(255,255,255,.9);max-width:135mm}
 
 /* =================== ROUTE MAP =================== */
-.mapwrap{position:absolute;left:15mm;right:15mm;top:64mm;height:120mm;border-radius:16px;overflow:hidden;border:1px solid var(--sky-line);box-shadow:0 16px 36px -22px rgba(6,37,54,.5)}
-.routeimg{width:100%;height:100%;object-fit:cover;display:block}
+.mapwrap{position:absolute;left:15mm;right:15mm;top:64mm;height:120mm;border-radius:16px;border:1px solid var(--sky-line);box-shadow:0 16px 36px -22px rgba(6,37,54,.5)}
+.routeimg{width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit}
 .routeboat{position:absolute;left:45%;top:39%;width:42px;height:42px;transform:translate(-50%,-50%);filter:drop-shadow(0 3px 6px rgba(6,37,54,.35))}
 .routeboat svg{width:100%;height:100%;display:block}
 .legend{position:absolute;left:15mm;right:15mm;top:192mm;display:flex;gap:10mm;align-items:center;flex-wrap:wrap}
@@ -85,8 +89,8 @@ img{display:block;max-width:100%}
 /* =================== SPLIT (captain / boat) =================== */
 .split{position:absolute;left:15mm;right:15mm;top:56mm;bottom:18mm;display:flex;flex-direction:column;gap:8mm}
 .block{display:grid;grid-template-columns:1fr 1fr;gap:7mm;align-items:stretch}
-.block .ph{border-radius:14px;overflow:hidden;box-shadow:0 14px 30px -20px rgba(6,37,54,.55);min-height:62mm}
-.block .ph img{width:100%;height:100%;object-fit:cover}
+.block .ph{position:relative;border-radius:14px;box-shadow:0 14px 30px -20px rgba(6,37,54,.55);min-height:62mm}
+.block .ph img{width:100%;height:100%;object-fit:cover;border-radius:inherit}
 .block.rev .ph{order:2}
 .block .bd{display:flex;flex-direction:column;justify-content:center}
 .block h3{font-family:var(--disp);font-weight:600;font-size:21pt;color:var(--navy);margin:6px 0 8px;letter-spacing:-.01em}
@@ -94,9 +98,9 @@ img{display:block;max-width:100%}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
 .chips span{background:var(--sky-2);border:1px solid var(--sky-line);color:var(--navy);font-weight:700;font-size:8.5pt;padding:5px 10px;border-radius:100px}
 .who3{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:1mm}
-.who3 .w{position:relative;border-radius:12px;overflow:hidden;height:40mm;color:#fff;display:flex;align-items:flex-end;box-shadow:0 12px 26px -18px rgba(6,37,54,.6)}
-.who3 .w img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.who3 .w .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,37,54,0) 40%,rgba(6,37,54,.85))}
+.who3 .w{position:relative;border-radius:12px;height:40mm;color:#fff;display:flex;align-items:flex-end;box-shadow:0 12px 26px -18px rgba(6,37,54,.6)}
+.who3 .w img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:inherit}
+.who3 .w .ov{position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(6,37,54,0) 40%,rgba(6,37,54,.85))}
 .who3 .w span{position:relative;padding:6mm 5mm;font-family:var(--disp);font-weight:600;font-size:13pt}
 
 /* =================== HOW / CONTACT =================== */

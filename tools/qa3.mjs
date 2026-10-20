@@ -1,0 +1,12 @@
+import puppeteer from "puppeteer-core";
+const EXE="C:/Program Files/Google/Chrome/Application/chrome.exe";
+const OUT="C:/Users/Franco/Documents/Code/christian-de-leonibus/_study";
+const b=await puppeteer.launch({executablePath:EXE,headless:"new",args:["--no-sandbox"]});
+const p=await b.newPage(); await p.setViewport({width:1440,height:920,deviceScaleFactor:1.4});
+await p.goto("http://localhost:8080/",{waitUntil:"networkidle2",timeout:60000});
+await new Promise(r=>setTimeout(r,500));
+await p.evaluate(()=>{const el=[...document.querySelectorAll('h2')].find(h=>h.textContent.includes('Tutto ci')); el&&el.scrollIntoView({block:'center'});});
+await new Promise(r=>setTimeout(r,700)); await p.screenshot({path:`${OUT}/ghost-worlds.png`});
+await p.evaluate(()=>{const el=[...document.querySelectorAll('h2')].find(h=>h.textContent.includes('Costruito attorno')); el&&el.scrollIntoView({block:'center'});});
+await new Promise(r=>setTimeout(r,700)); await p.screenshot({path:`${OUT}/ghost-method.png`});
+await b.close(); console.log("done");

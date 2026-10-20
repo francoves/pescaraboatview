@@ -1,0 +1,15 @@
+import puppeteer from "puppeteer-core";
+import fs from "node:fs";
+const EXE="C:/Program Files/Google/Chrome/Application/chrome.exe";
+const OUT="C:/Users/Franco/Documents/Code/christian-de-leonibus/_study"; fs.mkdirSync(OUT,{recursive:true});
+const b=await puppeteer.launch({executablePath:EXE,headless:"new",args:["--no-sandbox"]});
+const p=await b.newPage(); await p.setViewport({width:1380,height:900,deviceScaleFactor:1.3});
+await p.goto("http://localhost:8080/",{waitUntil:"networkidle2",timeout:60000});
+await new Promise(r=>setTimeout(r,500));
+await p.evaluate(()=>{const el=[...document.querySelectorAll('h2')].find(h=>h.textContent.includes('Da dove vuoi')); el&&el.scrollIntoView({block:'start'});});
+await new Promise(r=>setTimeout(r,700)); await p.screenshot({path:`${OUT}/scelta.png`});
+const p2=await b.newPage(); await p2.setViewport({width:1380,height:520,deviceScaleFactor:1.4});
+await p2.goto("http://localhost:8080/assicurativo",{waitUntil:"networkidle2",timeout:60000});
+await p2.evaluate(()=>{const el=document.querySelector('.crosslink'); el&&el.scrollIntoView({block:'center'});});
+await new Promise(r=>setTimeout(r,700)); await p2.screenshot({path:`${OUT}/cross.png`});
+await b.close(); console.log("done");

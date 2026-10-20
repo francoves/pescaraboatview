@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"/>
+<link rel="stylesheet" href="css/fonts.css" />
+<style>
+  :root{--navy:#0a3550;--navy-d:#062536;--coral:#ff7a59;--sea:#bfe9e9;--sand:#f3ece0;
+    --disp:"Bricolage Grotesque","Manrope",sans-serif;--sans:"Manrope",system-ui,sans-serif;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#2c3a44;display:flex;gap:16px;padding:16px;align-items:flex-start}
+  .flyer{position:relative;width:148mm;height:210mm;overflow:hidden;color:#fff;font-family:var(--sans);
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;flex:none}
+
+  /* ============ A — MANIFESTO CINEMATOGRAFICO ============ */
+  .A{background:#000}
+  .A .full{position:absolute;inset:0}
+  .A .full img{width:100%;height:100%;object-fit:cover;object-position:center 46%}
+  .A .full::after{content:"";position:absolute;inset:0;background:
+    linear-gradient(180deg,rgba(4,20,30,.5) 0%,rgba(4,20,30,0) 22%,rgba(4,20,30,0) 52%,rgba(4,20,30,.86) 100%)}
+  .A .logo{position:absolute;left:12mm;top:12mm;z-index:2;height:14mm;filter:drop-shadow(0 2px 10px rgba(0,0,0,.5))}
+  .A .foot{position:absolute;left:12mm;right:12mm;bottom:12mm;z-index:2}
+  .A h1{font-family:var(--disp);font-weight:800;font-size:33pt;line-height:.95;letter-spacing:-.015em}
+  .A h1 em{font-style:normal;color:var(--sea)}
+  .A .l{margin-top:12px;font-size:10.5pt;color:#dfeaf1;max-width:38ch;line-height:1.4}
+  .A .bar{display:flex;align-items:center;gap:11px;margin-top:20px;font-family:var(--disp);font-weight:800;font-size:12pt}
+  .A .bar .wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#04321a;padding:9px 15px;border-radius:11px}
+  .A .bar .wa svg{width:17px;height:17px;fill:#04321a}
+  .A .bar .site{color:#9fc0d3;font-family:var(--sans);font-weight:700;font-size:9pt;letter-spacing:.04em}
+
+  /* ============ B — EDITORIALE A COLONNA ============ */
+  .B{background:var(--sand);color:var(--navy-d)}
+  .B .img{position:absolute;right:0;top:0;bottom:0;width:88mm;overflow:hidden}
+  .B .img img{width:100%;height:100%;object-fit:cover;object-position:60% center}
+  .B .col{position:absolute;left:0;top:0;bottom:0;width:64mm;padding:14mm 9mm;display:flex;flex-direction:column}
+  .B .logo{height:13mm;align-self:flex-start}
+  .B .kick{margin-top:auto;font-family:var(--sans);font-weight:800;font-size:8pt;letter-spacing:.18em;text-transform:uppercase;color:var(--coral)}
+  .B h1{font-family:var(--disp);font-weight:800;font-size:23pt;line-height:1;letter-spacing:-.01em;margin-top:9px;color:var(--navy)}
+  .B .body{margin-top:12px;font-size:9.5pt;line-height:1.5;color:#3a4b56;max-width:30ch}
+  .B ul{list-style:none;margin-top:16px;display:flex;flex-direction:column;gap:9px}
+  .B li{font-family:var(--disp);font-weight:700;font-size:11pt;color:var(--navy);display:flex;align-items:baseline;gap:9px;padding-bottom:9px;border-bottom:1px solid rgba(10,53,80,.14)}
+  .B li span{font-family:var(--sans);font-weight:800;font-size:8pt;color:var(--coral)}
+  .B .cta{margin-top:16px}
+  .B .wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#04321a;font-family:var(--disp);font-weight:800;font-size:11pt;padding:10px 15px;border-radius:11px;text-decoration:none}
+  .B .wa svg{width:16px;height:16px;fill:#04321a}
+  .B .num{margin-top:9px;font-family:var(--disp);font-weight:800;font-size:11pt;color:var(--navy)}
+
+  /* ============ C — RACCONTO PER IMMAGINI ============ */
+  .C{background:var(--navy-d)}
+  .C .hero{position:absolute;left:0;right:0;top:0;height:118mm;overflow:hidden}
+  .C .hero img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+  .C .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,37,54,.35),rgba(6,37,54,0) 30%,rgba(6,37,54,0) 60%,var(--navy-d))}
+  .C .logo{position:absolute;left:10mm;top:10mm;z-index:2;height:13mm;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+  .C .htxt{position:absolute;left:10mm;right:10mm;top:78mm;z-index:2}
+  .C .htxt .kick{font-family:var(--sans);font-weight:800;font-size:8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--coral)}
+  .C .htxt h1{font-family:var(--disp);font-weight:800;font-size:25pt;line-height:.98;letter-spacing:-.01em;margin-top:6px}
+  .C .htxt h1 em{font-style:normal;color:var(--sea)}
+  .C .strip{position:absolute;left:10mm;right:10mm;top:126mm;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+  .C .cell{position:relative;height:34mm;border-radius:9px;overflow:hidden}
+  .C .cell img{width:100%;height:100%;object-fit:cover}
+  .C .cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(6,37,54,.9))}
+  .C .cell b{position:absolute;left:8px;bottom:7px;z-index:2;font-family:var(--disp);font-weight:800;font-size:9pt;letter-spacing:.01em}
+  .C .bottom{position:absolute;left:10mm;right:10mm;bottom:11mm;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .C .bottom .p{font-size:9pt;line-height:1.4;color:#cfe0ea;max-width:24ch}
+  .C .wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#04321a;font-family:var(--disp);font-weight:800;font-size:11pt;padding:10px 15px;border-radius:11px;text-decoration:none;flex:none}
+  .C .wa svg{width:16px;height:16px;fill:#04321a}
+
+  .tag{position:absolute;left:0;top:-26px;font:700 12px var(--sans);color:#cfe0ea;letter-spacing:.04em}
+  .wrap{position:relative}
+</style></head>
+<body>
+  <!-- A -->
+  <div class="wrap"><div class="tag">A — Manifesto cinematografico</div>
+  <div class="flyer A">
+    <div class="full"><img src="assets/img/trabocco-dusk.jpg" alt=""/></div>
+    <img class="logo" src="assets/img/logo-banner.png" alt="Pescara Boat View" style="content:none"/>
+    <div class="foot">
+      <h1>Il mare lento<br/>degli <em>abruzzesi</em>.</h1>
+      <p class="l">Giri in barca da Pescara, lungo la Costa dei Trabocchi. Calette, pranzo a bordo, tramonti.</p>
+      <div class="bar">
+        <a class="wa"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4M12 2C6.5 2 2 6.5 2 12c0 2.1.6 4.1 1.6 5.8L2 22l4.3-1.6c1.7 1 3.6 1.5 5.7 1.5 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg> Prenota</a>
+        <span class="site">wa.me · 333 000 0000</span>
+      </div>
+    </div>
+  </div></div>
+
+  <!-- B -->
+  <div class="wrap"><div class="tag">B — Editoriale a colonna</div>
+  <div class="flyer B">
+    <div class="img"><img src="assets/img/trabocco-walk.jpg" alt=""/></div>
+    <div class="col">
+      <img class="logo" src="assets/img/emblem.png" alt="Pescara Boat View"/>
+      <div class="kick">Pescara, Costa dei Trabocchi</div>
+      <h1>Ti portiamo dove il mare lo conoscono i locali.</h1>
+      <p class="body">Barche artigianali, ritmo lento, un solo skipper che ci vive. Salpiamo da Pescara e ti mostriamo la costa come la vediamo noi.</p>
+      <ul>
+        <li><span>01</span> Calette nascoste</li>
+        <li><span>02</span> Pranzo cucinato a bordo</li>
+        <li><span>03</span> Tramonti sull'Adriatico</li>
+      </ul>
+      <div class="cta">
+        <a class="wa"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4M12 2C6.5 2 2 6.5 2 12c0 2.1.6 4.1 1.6 5.8L2 22l4.3-1.6c1.7 1 3.6 1.5 5.7 1.5 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg> Prenota su WhatsApp</a>
+        <div class="num">333 000 0000</div>
+      </div>
+    </div>
+  </div></div>
+
+  <!-- C -->
+  <div class="wrap"><div class="tag">C — Racconto per immagini</div>
+  <div class="flyer C">
+    <div class="hero"><img src="assets/img/trabocco-hero.jpg" alt=""/></div>
+    <img class="logo" src="assets/img/logo-banner.png" alt="Pescara Boat View"/>
+    <div class="htxt">
+      <div class="kick">Giri in barca da Pescara</div>
+      <h1>La costa come<br/>la vede <em>chi ci vive</em>.</h1>
+    </div>
+    <div class="strip">
+      <div class="cell"><img src="assets/img/cove-aerial.jpg" alt=""/><b>Calette</b></div>
+      <div class="cell"><img src="assets/img/mussels-seaview.jpg" alt=""/><b>A tavola sul mare</b></div>
+      <div class="cell"><img src="assets/img/toast-sunset.jpg" alt=""/><b>Tramonti</b></div>
+    </div>
+    <div class="bottom">
+      <p class="p">Mezza giornata o giornata intera, fino a 10 persone. Il ritmo lo scegli tu.</p>
+      <a class="wa"><svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.4M12 2C6.5 2 2 6.5 2 12c0 2.1.6 4.1 1.6 5.8L2 22l4.3-1.6c1.7 1 3.6 1.5 5.7 1.5 5.5 0 10-4.5 10-10S17.5 2 12 2"/></svg> Prenota</a>
+    </div>
+  </div></div>
+</body></html>

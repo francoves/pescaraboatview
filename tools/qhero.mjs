@@ -1,0 +1,14 @@
+import puppeteer from "puppeteer-core";
+import fs from "node:fs";
+const EXE="C:/Program Files/Google/Chrome/Application/chrome.exe";
+const OUT="C:/Users/Franco/Documents/Code/christian-de-leonibus/_study"; fs.mkdirSync(OUT,{recursive:true});
+const b=await puppeteer.launch({executablePath:EXE,headless:"new",args:["--no-sandbox"]});
+const p=await b.newPage(); await p.setViewport({width:1380,height:840,deviceScaleFactor:1.4});
+await p.goto("http://localhost:8080/",{waitUntil:"networkidle2",timeout:60000});
+await new Promise(r=>setTimeout(r,700));
+await p.screenshot({path:`${OUT}/hero-default.png`}); console.log("default");
+await p.click('#heroSwitch button[data-w="a"]'); await new Promise(r=>setTimeout(r,500));
+await p.screenshot({path:`${OUT}/hero-assic.png`}); console.log("assic");
+await p.click('#heroSwitch button[data-w="f"]'); await new Promise(r=>setTimeout(r,500));
+await p.screenshot({path:`${OUT}/hero-fin.png`}); console.log("fin");
+await b.close();
